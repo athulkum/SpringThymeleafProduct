@@ -7,6 +7,8 @@
 <body>
   <h2>Product Form</h2>
 
+<a th:href="@{/products}">View Product List</a>
+
   <form th:action="@{/save}" th:object="${product}" method="post">
 
     <table>

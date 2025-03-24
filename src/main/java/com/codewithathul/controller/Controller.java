@@ -40,5 +40,13 @@ public class Controller {
 		
 		return "index";
 	}
+
+	@GetMapping("/products")
+	public String getAllProducts(Model model) {
+		
+		model.addAttribute("products", repository.findAll());
+		
+		return "products";
+	}
 	
 }
