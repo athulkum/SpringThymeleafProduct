@@ -6,6 +6,4 @@ import com.codewithathul.entity.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-	
-	
 }
