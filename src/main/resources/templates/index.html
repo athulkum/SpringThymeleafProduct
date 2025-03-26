@@ -7,21 +7,46 @@
 <body>
   <h2>Product Form</h2>
 
-  <form th:action="@{/save}" th:object="${product}" method="post">
+<a th:href="@{/products}">View Product List</a>
 
-    <table>
+  <form th:action="@{/save}" th:object="${product}" method="post">
+    
+    <input type="hidden" th:field=*{id}>
+    
+    <table border="1">
       <!-- Name field -->
       <tr>
-        <td>Name: <input type="text" th:field="*{name}"/> </td>
+        <td>
+        Name: <input type="text" th:field="*{name}"/>
+        <font color="Red">
+       
+           <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+           
+        </font>
+        
+         </td>
       </tr>
        <!-- Price field -->
       <tr>
-        <td>Price: <input type="text" th:field="*{price}"/> </td>
+        <td>Price: <input type="text" th:field="*{price}"/> 
+          <font color="Red">
+       
+           <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
+           
+        </font>
+        
+        </td>
       </tr>
       
       <!-- Quantity field -->
       <tr>
-        <td>Quantity: <input type="text" th:field="*{qty}"/> </td>
+        <td>Quantity: <input type="text" th:field="*{qty}"/>
+            <font color="Red">
+       
+           <span th:if="${#fields.hasErrors('qty')}" th:errors="*{qty}"></span>
+           
+        </font>
+         </td>
       </tr>
       
       <tr>
